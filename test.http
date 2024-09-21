@@ -1,0 +1,16 @@
+GET https://restcountries.com/v3.1/all
+
+###
+GET http://localhost:3000/api/countries
+
+###
+GET http://localhost:3000/api/countries/USA
+
+###
+GET http://localhost:3000/api/countries/search?code=US
+
+###
+GET http://localhost:3000/api/countries/region/asia
+
+###
+GET https://coffee-api.dicoding.dev/coffees

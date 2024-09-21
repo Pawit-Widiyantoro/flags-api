@@ -5,15 +5,16 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const __rootDir = path.resolve(__dirname, '..')
 
-const flagsDir = path.join(__dirname, "public", "flags");
+const flagsDir = path.join(__rootDir, "public", "flags");
 if (!fs.existsSync(flagsDir)) {
     fs.mkdirSync(flagsDir, { recursive: true });
 }
 
 export const downloadFlag = async (flagURL, countryCode) => {
     const flagPath = path.join(flagsDir, `${countryCode}.svg`);
-    const writer = fs.createReadStream(flagPath);
+    const writer = fs.createWriteStream(flagPath);
 
     const response = await axios({
         url: flagURL,

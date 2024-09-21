@@ -74,7 +74,7 @@ export const getCountryByCode = async (req, res) => {
             });
         }
     } catch (error) {
-        logger.error(`Error retrieving book with code ${code}: ${error.message}`, { stack: error.stack });
+        logger.error(`Error retrieving country with code ${code}: ${error.message}`, { stack: error.stack });
         res.status(500).json({
             message: "Internal server error",
             error: error.message,
