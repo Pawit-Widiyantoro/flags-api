@@ -3,6 +3,7 @@ import { config } from "dotenv";
 config();
 
 export const addUrlFlag = (req, countryOrCountries) => {
+    const environment = process.env.NODE_ENV;
     const protocol = req.headers['x-forwarded-proto'] || req.protocol;
     const host = environment === 'production'
                                     ? process.env.VERCEL_URL || req.get('host')
