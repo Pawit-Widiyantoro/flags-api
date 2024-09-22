@@ -18,7 +18,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/api/countries", countryRouter);
 
 app.listen(PORT, () => {
-    logger.info(`Server running on http://localhost:${PORT}`);
+    const environment = process.env.NODE_ENV || 'development';
+    let host;
+
+    if (environment === 'production') {
+        host = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'Unknown host';  // Ensures HTTPS in production
+    } else {
+        host = `http://localhost:${PORT}`;  // Localhost with HTTP and port
+    }
+
+    logger.info(`Server running on ${host}`);
 });
 
 export default app;

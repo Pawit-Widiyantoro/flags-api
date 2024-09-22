@@ -1,5 +1,13 @@
+import { config } from "dotenv";
+
+config();
+
 export const addUrlFlag = (req, countryOrCountries) => {
-    const baseUrl = `${req.protocol}://${req.get('host')}`;
+    const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+    const host = environment === 'production'
+                                    ? process.env.VERCEL_URL || req.get('host')
+                                    : req.get('host');
+    const baseUrl = `${protocol}://${req.get('host')}`;
 
     if (Array.isArray(countryOrCountries)) {
         return countryOrCountries.map(country => ({
