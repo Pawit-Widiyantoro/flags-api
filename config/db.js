@@ -16,7 +16,12 @@ const connection = new Sequelize(
 );
 
 connection.authenticate()
-    .then(() => console.log("Connect to database!"))
-    .catch((err) => console.error("Unable to connect to databse", err));
+    .then(() => {
+        console.log("Connected to the database!");
+    })
+    .catch((err) => {
+        console.error("Unable to connect to the database:", err.message);
+        console.error("Error details:", err);
+    });
 
 export default connection;

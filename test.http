@@ -17,3 +17,6 @@ GET https://coffee-api.dicoding.dev/coffees
 
 ###
 GET https://flags-api-puce.vercel.app/api/countries
+
+###
+GET https://flags-api-puce.vercel.app/api/countries/USA
