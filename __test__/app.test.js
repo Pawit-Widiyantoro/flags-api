@@ -1,5 +1,5 @@
 import request from "supertest";
-import app from "../app";
+import app from "../api/app.js";
 import connection from "../config/db";
 import { Country } from "../models";
 

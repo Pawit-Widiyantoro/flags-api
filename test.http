@@ -14,3 +14,6 @@ GET http://localhost:3000/api/countries/region/asia
 
 ###
 GET https://coffee-api.dicoding.dev/coffees
+
+###
+GET https://flags-api-puce.vercel.app/api/countries

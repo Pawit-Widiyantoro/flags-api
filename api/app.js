@@ -1,9 +1,9 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import countryRouter from "./routes/countriesRouter.js";
-import { logger } from "./config/logger.js";
-import { fetchAndStoreCountries } from "./services/countryService.js";
+import countryRouter from "../routes/countriesRouter.js";
+import { logger } from "../config/logger.js";
+import { fetchAndStoreCountries } from "../services/countryService.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
